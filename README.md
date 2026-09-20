@@ -4,7 +4,8 @@ MiniMart 的支付进程（Payment 收钱记录）。领域用语与 v1 契约�
 
 - Spring 名：`payment-service`
 - 端口：8084
-- 库：`minimart_payment`（由 infra 的 `docker/mysql/init.sql` 建）
+- 库：`minimart_payment`（由 infra 的 `docker/mysql/init.sql` 建；本进程尚未连库）
+- Feign：成功/失败后通知 order 的幂等 pay-result。不写 Order 或 Stock。
 
 本机运行（Nacos 需已起，`NACOS_ADDR=127.0.0.1:8848`）：
 
